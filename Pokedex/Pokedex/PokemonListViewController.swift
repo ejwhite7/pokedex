@@ -99,7 +99,11 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
         if segue.identifier == "ShowPokemonSegue",
                 let destination = segue.destination as? PokemonViewController,
                 let index = tableView.indexPathForSelectedRow?.row {
-            destination.url = pokemon[index].url
+            if (searchActive){
+                destination.url = filtered[index].url
+            } else {
+                destination.url = pokemon[index].url
+            }
         }
     }
 }
