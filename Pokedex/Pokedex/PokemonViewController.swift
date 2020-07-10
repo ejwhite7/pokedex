@@ -2,7 +2,6 @@ import UIKit
 
 class PokemonViewController: UIViewController {
     
-    
     var name: String! //Create global name variable for user defaults
     var url: String!
     var caught: Bool! //Set global caught variable
@@ -30,7 +29,7 @@ class PokemonViewController: UIViewController {
         }
     }
     
-    
+
 
     func capitalize(text: String) -> String {
         return text.prefix(1).uppercased() + text.dropFirst()
@@ -43,7 +42,7 @@ class PokemonViewController: UIViewController {
         numberLabel.text = ""
         type1Label.text = ""
         type2Label.text = ""
-
+        
         loadPokemon()
         
     }
@@ -63,10 +62,10 @@ class PokemonViewController: UIViewController {
                     self.numberLabel.text = String(format: "#%03d", result.id)
                     for typeEntry in result.types {
                         if typeEntry.slot == 1 {
-                            self.type1Label.text = typeEntry.type.name
+                            self.type1Label.text = self.capitalize(text: typeEntry.type.name)
                         }
                         else if typeEntry.slot == 2 {
-                            self.type2Label.text = typeEntry.type.name
+                            self.type2Label.text = self.capitalize(text: typeEntry.type.name)
                         }
                     }
                     

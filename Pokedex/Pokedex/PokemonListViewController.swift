@@ -4,6 +4,7 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet var searchBar: UISearchBar!
     
+    
     var searchActive : Bool = false
     var pokemon: [PokemonListResult] = []
     var filtered: [PokemonListResult] = []
