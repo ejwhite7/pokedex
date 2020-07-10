@@ -92,6 +92,10 @@ class PokemonListViewController: UITableViewController, UISearchBarDelegate {
         } else {
             cell.textLabel?.text = capitalize(text: pokemon[indexPath.row].name)
         }
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.65, green: 0.07, blue: 0.16, alpha: 1.00)
+        cell.selectedBackgroundView = view
+        
         return cell
     }
     
